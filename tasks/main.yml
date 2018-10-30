@@ -13,7 +13,7 @@
 
 - name: DELETE default inventory item
   uri:
-    url: https://localhost/api/v2/inventories/2/
+    url: https://localhost/api/v2/inventories/1/
     method: DELETE
     user: admin
     password: "{{ towerpass }}"
@@ -33,7 +33,7 @@
 
 - name: DELETE default project
   uri:
-    url: https://localhost/api/v2/job_templates/4/
+    url: https://localhost/api/v2/projects/4/
     method: DELETE
     user: admin
     password: "{{ towerpass }}"
