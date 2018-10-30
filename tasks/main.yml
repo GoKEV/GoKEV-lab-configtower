@@ -1,2 +1,58 @@
 ---
 # tasks file for GoKEV-lab-configtower
+
+- name: DELETE default hosts item
+  uri:
+    url: https://localhost/api/v2/hosts/1/
+    method: DELETE
+    user: admin
+    password: "{{ towerpass }}"
+    validate_certs: False
+    force_basic_auth: yes
+  failed_when: False
+
+- name: DELETE default inventory item
+  uri:
+    url: https://localhost/api/v2/inventories/2/
+    method: DELETE
+    user: admin
+    password: "{{ towerpass }}"
+    validate_certs: False
+    force_basic_auth: yes
+  failed_when: False
+
+- name: DELETE default credentials item
+  uri:
+    url: https://localhost/api/v2/credentials/1/
+    method: DELETE
+    user: admin
+    password: "{{ towerpass }}"
+    validate_certs: False
+    force_basic_auth: yes
+  failed_when: False
+
+- name: DELETE default project
+  uri:
+    url: https://localhost/api/v2/job_templates/4/
+    method: DELETE
+    user: admin
+    password: "{{ towerpass }}"
+    validate_certs: False
+    force_basic_auth: yes
+  failed_when: False
+
+- name: DELETE default job template
+  uri:
+    url: https://localhost/api/v2/job_templates/5/
+    method: DELETE
+    user: admin
+    password: "{{ towerpass }}"
+    validate_certs: False
+    force_basic_auth: yes
+  failed_when: False
+
+
+
+# Add host via API
+#curl -s -f -k -H 'Content-Type: application/json' -XPOST -d '{ "name": "1.2.3.4", "description": "This is my new server", "inventory": "5", "enabled": true}' --user kev:kev https://ansibletower.kev/api/v2/hosts/
+
